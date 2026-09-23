@@ -18,6 +18,7 @@ Build a small, TypeSafe Typewriter-style demo for earnings-call analysis.
 - A small request limit and input-size limit protect the public demo. The OpenRouter key should also have a spend cap.
 - This is a qualitative signal panel. It does not calculate earnings surprises, produce a price target, or issue a trade recommendation.
 - Default presentation is white with near-black text. Green marks favorable classifications, red marks pressure, amber marks mixed or cautionary classifications, blue marks balanced classifications, and gray marks insufficient evidence. The colors describe business signals, not expected stock returns.
+- Show the actual USD cost and input tokens returned by OpenRouter for each completed analysis. Measure the Jev request round trip in the browser; for selected MarketBeat calls, also measure transcript loading and total click-to-result time. Hide stale run figures whenever the input or selection changes.
 
 ## Sources
 

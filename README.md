@@ -33,4 +33,6 @@ The Worker reads the [MarketBeat transcripts directory](https://www.marketbeat.c
 
 The sixteen criteria cover demand, organic growth, realized pricing, competitive position, margin durability, earnings adjustments, cash conversion, working capital, guidance revision, outlook visibility, funding, execution, capital allocation, dilution, disclosure quality and Q&A accountability. Guidance revision requires an explicitly stated prior baseline in the call. Bars show Jev's classification probabilities; their green, red, amber, blue and gray colors convey favorable, pressured, mixed, balanced and unclear readings respectively.
 
+Each completed run shows OpenRouter's reported USD cost and input token count. The browser measures the Jev request round trip; for MarketBeat calls it also shows transcript load time and total click-to-result time. These are observed run times, not model-only inference times. OpenRouter documents `usage.cost` for the [Decisions API](https://openrouter.ai/docs/api/api-reference/alphadecisions/submit-a-decisions-questions-and-answers-request).
+
 The Worker calls OpenRouter's [Decisions API](https://openrouter.ai/blog/tutorials/jev-vs-llm-when-to-use-each/) at `/api/alpha/decisions` using `typesafe/jev-1.13`.

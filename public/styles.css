@@ -37,6 +37,12 @@ body{background:#fff;color:var(--ink)}
 .workspace-heading{min-height:106px}
 .workspace-toolbar{margin-top:8px}
 .metric-groups{gap:28px 28px}
+.run-stats{display:flex;flex-wrap:wrap;gap:0;margin-top:18px;padding:14px 16px 10px;border:1px solid var(--line);border-radius:5px;background:#fafbfc}
+.run-stat{display:flex;flex-direction:column;gap:3px;min-width:122px;padding:0 18px 0 0;margin:0 18px 8px 0;border-right:1px solid var(--line)}
+.run-stat:last-of-type{border-right:0;margin-right:0}
+.run-stat-label{font-size:11px;color:var(--muted)}
+.run-stat-value{font-size:16px;font-weight:680;letter-spacing:-.4px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.run-stats-note{flex-basis:100%;font-size:10px;color:var(--muted);margin:0}
 .metric-section h3{font-size:16px}
 .metric-section-head p{font-size:12px}
 .metric-list{border-top:2px solid #cfd5de}
@@ -97,4 +103,7 @@ body{background:#fff;color:var(--ink)}
   .metric-row>summary{min-height:60px}
   .metric-name{font-size:12px}
   .metric-choice{font-size:11px}
+  .run-stats{padding:12px}
+  .run-stat{min-width:calc(50% - 14px);padding-right:10px;margin-right:12px}
+  .run-stat:nth-of-type(2n){border-right:0;margin-right:0}
 }

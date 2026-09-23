@@ -19,7 +19,35 @@ function cancel() {
   state.pending?.abort(); state.loading?.abort();
   state.pending = null; state.loading = null;
 }
-function resetResults() { state.result = null; renderResults(); }
+function resetResults() { state.result = null; $("run-stats").hidden = true; $("run-stats").replaceChildren(); renderResults(); }
+function formatDuration(milliseconds) {
+  if (!Number.isFinite(milliseconds)) return "Unavailable";
+  return milliseconds < 1000 ? `${Math.round(milliseconds)} ms` : `${(milliseconds / 1000).toFixed(1)} s`;
+}
+function formatCost(value) {
+  if (value === null || value === undefined || !Number.isFinite(Number(value))) return "Unavailable";
+  const cost = Number(value);
+  const digits = cost < 0.000001 && cost > 0 ? 8 : cost < 0.01 ? 6 : 4;
+  return `$${cost.toFixed(digits)}`;
+}
+function renderRunStats(result, timing) {
+  const stats = $("run-stats");
+  stats.replaceChildren();
+  const values = [
+    ["Jev round trip", formatDuration(timing.jevRequestMs)],
+    ...(timing.transcriptMs === null ? [] : [["Transcript load", formatDuration(timing.transcriptMs)]]),
+    ...(timing.transcriptMs === null ? [] : [["Click to result", formatDuration(timing.totalMs)]]),
+    ["OpenRouter cost", formatCost(result.usage?.cost)],
+    ["Input tokens", result.usage?.inputTokens == null ? "Unavailable" : Number(result.usage.inputTokens).toLocaleString()],
+  ];
+  for (const [label, value] of values) {
+    const item = el("div", "run-stat");
+    item.append(el("span", "run-stat-label", label), el("strong", "run-stat-value", value));
+    stats.append(item);
+  }
+  stats.append(el("p", "run-stats-note", "Times measured in this browser. Cost is the amount reported by OpenRouter in USD."));
+  stats.hidden = false;
+}
 function renderCalls() {
   $("calls").replaceChildren();
   for (const call of state.calls) {
@@ -50,6 +78,7 @@ async function loadCalls() {
   finally { $("refresh").disabled = false; }
 }
 async function selectCall(call) {
+  const startedAt = performance.now();
   cancel(); error(); state.selected = call; resetResults(); renderCalls();
   $("call-context").textContent = `${call.ticker} / ${call.period}`;
   $("call-title").textContent = call.name;
@@ -71,7 +100,7 @@ async function selectCall(call) {
     $("editor-label").textContent = "Full transcript";
     $("coverage").textContent = `${data.turns} speaker turns · full call`;
     state.loading = null; updateEditor();
-    await analyze();
+    await analyze({ startedAt, transcriptMs: performance.now() - startedAt });
   } catch (e) {
     if (e.name === "AbortError") return;
     error(e.message); status("Transcript unavailable");
@@ -152,7 +181,7 @@ function renderResults() {
     section.append(list); parent.append(section);
   }
 }
-async function analyze() {
+async function analyze(timing = {}) {
   if (!state.config) return;
   const text = $("call-text").value.trim();
   if (text.length < 80) return error("Paste at least 80 characters from a call.");
@@ -168,16 +197,23 @@ async function analyze() {
   error(); resetResults(); status("Jev is reading", "loading");
   $("result-meta").textContent = `Evaluating ${Object.keys(state.config.questions).length} criteria against ${text.length.toLocaleString()} characters of call text.`;
   updateEditor();
+  const analysisStart = performance.now();
   try {
     const response = await fetch("/api/analyze", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ text }), signal: controller.signal });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "Analysis failed.");
     if (state.pending !== controller) return;
+    const completedAt = performance.now();
     state.result = data; renderResults();
+    renderRunStats(data, {
+      jevRequestMs: completedAt - analysisStart,
+      transcriptMs: timing.transcriptMs ?? null,
+      totalMs: completedAt - (timing.startedAt ?? analysisStart),
+    });
     const valid = Object.values(data.answers).filter(Boolean).length;
     status(valid === Object.keys(state.config.questions).length ? "Analysis complete" : "Partial analysis", "ready");
     const time = new Date(data.analyzedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
-    $("result-meta").textContent = `${valid} decisions · ${data.model} · ${time}${data.usage?.inputTokens != null ? ` · ${data.usage.inputTokens.toLocaleString()} input tokens` : ""}`;
+    $("result-meta").textContent = `${valid} decisions · ${data.model} · ${time}`;
   } catch (e) {
     if (e.name === "AbortError") return;
     error(e.message); status("Analysis failed");
