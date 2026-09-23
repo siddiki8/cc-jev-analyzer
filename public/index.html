@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Earnings Call Signals | Jev</title>
+  <meta name="description" content="Read the latest full earnings calls through sixteen investor-focused Jev criteria.">
+  <link rel="preload" href="/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to analysis</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Earnings Call Signals home"><span class="brand-mark" aria-hidden="true">ec</span><span>Earnings Call Signals</span></a>
+    <div class="topbar-tools"><span class="powered">Powered by Jev</span><span id="connection" class="connection">Connecting</span></div>
+  </header>
+  <div class="app-layout">
+    <aside class="library" aria-labelledby="library-title">
+      <div class="library-head"><h2 id="library-title">Latest calls</h2><span class="count" id="call-count">…</span></div>
+      <div class="library-description"><a href="https://www.marketbeat.com/earnings/transcripts/" target="_blank" rel="noopener noreferrer">From MarketBeat</a><button id="refresh" type="button">Refresh</button></div>
+      <p id="library-status" class="library-status" role="status">Loading the latest transcripts…</p>
+      <div id="calls" class="call-list" aria-label="Latest earnings calls"></div>
+      <div class="library-bottom"><button id="paste" class="paste-button" type="button">Paste your own call <span aria-hidden="true">+</span></button><p>Select a call to load the full transcript and run the analysis.</p></div>
+    </aside>
+    <main id="workspace" class="workspace">
+      <div class="workspace-heading">
+        <div><p id="call-context" class="call-context">Your earnings research desk</p><h1 id="call-title">Read between the numbers.</h1><p id="call-subtitle" class="call-subtitle">Choose a call. Get a structured view of the business behind it.</p></div>
+        <span id="results-state" class="status" role="status">Ready to start</span>
+      </div>
+      <div class="workspace-toolbar"><span id="coverage">Full transcripts, including Q&A</span><a id="source-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Read on MarketBeat</a></div>
+      <details id="transcript-panel" class="transcript-panel">
+        <summary><span id="editor-label">Or paste a transcript</span><span id="character-count">0 characters</span></summary>
+        <div class="editor-body">
+          <label for="call-text">Full call text</label>
+          <textarea id="call-text" spellcheck="false" placeholder="Paste the complete earnings call transcript here." maxlength="90000"></textarea>
+          <div class="editor-actions"><span id="editor-note">Up to 90,000 characters. Sent to OpenRouter when analyzed.</span><button id="analyze" type="button" class="primary-button" disabled>Analyze call</button></div>
+        </div>
+      </details>
+      <div id="error" class="error-message" role="alert" hidden></div>
+      <section class="analysis" aria-labelledby="analysis-title" aria-busy="false">
+        <div class="analysis-heading"><h2 id="analysis-title">The investor readout</h2><span id="analysis-count">16 criteria</span></div>
+        <p id="result-meta" class="result-meta" role="status">Select a call to evaluate business momentum, earnings quality and management accountability.</p>
+        <div id="metric-groups" class="metric-groups"></div>
+      </section>
+      <footer class="workspace-footer"><p>Green indicates a favorable operating signal; red indicates pressure; amber indicates a mixed or cautionary signal. Gray marks insufficient evidence. Each percentage is Jev’s probability for a classification, not a forecast of returns.</p><div><span>Built with Jev via OpenRouter</span><a href="https://www.val.town/x/stevekrouse/typesafe-typewriter" target="_blank" rel="noopener noreferrer">Inspired by TypeSafe Typewriter</a></div></footer>
+    </main>
+  </div>
+</body>
+</html>
