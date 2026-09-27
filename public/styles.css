@@ -29,6 +29,10 @@
 body{background:#fff;color:var(--ink)}
 .topbar{height:68px;padding:0 26px}
 .brand-mark{background:#253c72;color:#fff}
+.brand-mark{display:block;padding:0;object-fit:contain}
+.app-layout{height:calc(100dvh - 68px);min-height:0}
+.library,.workspace{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.workspace{scrollbar-width:thin;scrollbar-color:#c5cedb transparent}
 .library{border-right:1px solid var(--line);padding-top:28px}
 .call-button.active{background:#f3f6fb;border:1px solid #dbe3f1;border-left:3px solid var(--accent)}
 .call-button:hover{background:#f7f8fb}
@@ -98,6 +102,8 @@ body{background:#fff;color:var(--ink)}
 }
 @media(max-width:760px){
   .topbar{height:62px;padding:0 18px}
+  .app-layout{height:auto;min-height:calc(100dvh - 62px)}
+  .library,.workspace{overflow:visible}
   .library{border-right:0}
   .workspace{padding:26px 18px}
   .metric-row>summary{min-height:60px}
