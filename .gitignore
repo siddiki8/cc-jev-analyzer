@@ -6,3 +6,6 @@ node_modules/
 dist/
 .agents/
 skills-lock.json
+evals/data/transcripts/
+evals/results/raw/
+evals/results/*.log
