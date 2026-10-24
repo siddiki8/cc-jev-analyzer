@@ -1,5 +1,7 @@
 # Jev eval
 
+![Jev eval results: accuracy by question, judge validity, calibration, over-abstention and robustness](results/graphic.png)
+
 This eval measures how well Jev answers the sixteen questions in [`src/questions.js`](../src/questions.js) on real earnings calls. It uses LLMs in two roles:
 
 | Role | Model | What it does |
