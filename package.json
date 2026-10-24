@@ -7,9 +7,13 @@
     "dev": "wrangler dev --env-file .dev.local",
     "deploy": "wrangler deploy",
     "test": "node --test",
-    "check": "wrangler deploy --dry-run"
+    "check": "wrangler deploy --dry-run",
+    "eval:snapshot": "node evals/snapshot.js",
+    "eval:run": "node --env-file=.dev.local evals/run.js",
+    "eval:score": "node evals/score.js"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
     "wrangler": "^4.102.0"
   },
   "dependencies": {

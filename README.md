@@ -16,6 +16,10 @@ npm run dev
 
 Open <http://localhost:8787>. Without the key, the interface still loads and explains that analysis is unavailable.
 
+## Eval
+
+[`evals/`](evals/README.md) scores Jev's sixteen answers on frozen MarketBeat calls. Claude Opus 5.5 provides gold labels, Claude Sonnet 5.5 acts as a validated LLM judge, and perturbation tests probe Q&A removal, prompt injection, optimistic fluff and truncation. See [`evals/results/report.md`](evals/results/report.md).
+
 ## Deploy
 
 ```sh

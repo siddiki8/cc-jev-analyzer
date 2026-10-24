@@ -1,0 +1,672 @@
+{
+  "generatedAt": "2026-10-24T01:58:21.972Z",
+  "transcripts": [
+    "FIX",
+    "MYFW",
+    "GBCI",
+    "KRC",
+    "REXR",
+    "USCB",
+    "VTMX",
+    "WSFS",
+    "FHB",
+    "PFBC"
+  ],
+  "overall": {
+    "judge": {
+      "n": 160,
+      "exact": 0.88125,
+      "lenient": 0.98125,
+      "kappa": 0.8770674107323385,
+      "unanimous": 0.85
+    },
+    "jevHuman": {
+      "n": 160,
+      "strict": 0.675,
+      "lenient": 0.9125,
+      "logLoss": 0.8084685057245279,
+      "brier": 0.45948025673400644
+    },
+    "jevJudge": {
+      "n": 160,
+      "strict": 0.70625,
+      "lenient": 0.95,
+      "logLoss": 0.7194946359960456,
+      "brier": 0.41468353956228965
+    },
+    "verdict": {
+      "n": 160,
+      "agree": 0.925,
+      "kappa": 0.4174757281553403,
+      "judgeLenient": 0.95,
+      "humanLenient": 0.9125
+    }
+  },
+  "perQuestion": [
+    {
+      "q": "demand",
+      "label": "Underlying demand",
+      "judge": {
+        "n": 10,
+        "exact": 1,
+        "lenient": 1,
+        "kappa": 1,
+        "unanimous": 0.9
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 1,
+        "lenient": 1,
+        "logLoss": 0.32408245485986126,
+        "brier": 0.15304
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 1,
+        "lenient": 1,
+        "logLoss": 0.32408245485986126,
+        "brier": 0.15304
+      },
+      "unclear": {
+        "human": 0,
+        "judge": 0,
+        "jev": 0
+      }
+    },
+    {
+      "q": "organic",
+      "label": "Organic growth quality",
+      "judge": {
+        "n": 10,
+        "exact": 0.8,
+        "lenient": 0.9,
+        "kappa": 0.5833333333333335,
+        "unanimous": 0.8
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.6,
+        "lenient": 0.8,
+        "logLoss": 0.8088907145906082,
+        "brier": 0.4424011672278339
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.8,
+        "lenient": 1,
+        "logLoss": 0.5384980661987735,
+        "brier": 0.2976536924803591
+      },
+      "unclear": {
+        "human": 0.1,
+        "judge": 0,
+        "jev": 0
+      }
+    },
+    {
+      "q": "pricing",
+      "label": "Realized pricing",
+      "judge": {
+        "n": 10,
+        "exact": 0.7,
+        "lenient": 0.9,
+        "kappa": 0.5454545454545454,
+        "unanimous": 0.6
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.6,
+        "lenient": 0.9,
+        "logLoss": 1.2064237102667237,
+        "brier": 0.5971727884909702
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.7,
+        "lenient": 0.8,
+        "logLoss": 1.040202098488575,
+        "brier": 0.4991727884909702
+      },
+      "unclear": {
+        "human": 0.1,
+        "judge": 0.2,
+        "jev": 0.2
+      }
+    },
+    {
+      "q": "competitive",
+      "label": "Competitive position",
+      "judge": {
+        "n": 10,
+        "exact": 0.9,
+        "lenient": 1,
+        "kappa": 0.8484848484848486,
+        "unanimous": 0.6
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.6,
+        "lenient": 0.9,
+        "logLoss": 1.0331498785315485,
+        "brier": 0.57234
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.6,
+        "lenient": 0.9,
+        "logLoss": 1.0706192234756897,
+        "brier": 0.58234
+      },
+      "unclear": {
+        "human": 0.5,
+        "judge": 0.5,
+        "jev": 0.9
+      }
+    },
+    {
+      "q": "margin",
+      "label": "Margin durability",
+      "judge": {
+        "n": 10,
+        "exact": 0.8,
+        "lenient": 1,
+        "kappa": 0.5833333333333334,
+        "unanimous": 0.9
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.6,
+        "lenient": 1,
+        "logLoss": 1.0266778217267067,
+        "brier": 0.6212901520253035
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.6,
+        "lenient": 1,
+        "logLoss": 1.0812695160844328,
+        "brier": 0.6352901520253036
+      },
+      "unclear": {
+        "human": 0,
+        "judge": 0,
+        "jev": 0
+      }
+    },
+    {
+      "q": "adjustments",
+      "label": "Earnings adjustments",
+      "judge": {
+        "n": 10,
+        "exact": 0.9,
+        "lenient": 1,
+        "kappa": 0.8333333333333333,
+        "unanimous": 0.6
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.6,
+        "lenient": 0.8,
+        "logLoss": 1.0553629835399054,
+        "brier": 0.58388
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.5,
+        "lenient": 0.9,
+        "logLoss": 1.0633672543072592,
+        "brier": 0.58988
+      },
+      "unclear": {
+        "human": 0.2,
+        "judge": 0.2,
+        "jev": 0.1
+      }
+    },
+    {
+      "q": "conversion",
+      "label": "Cash conversion",
+      "judge": {
+        "n": 10,
+        "exact": 1,
+        "lenient": 1,
+        "kappa": 1,
+        "unanimous": 0.8
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.9,
+        "lenient": 1,
+        "logLoss": 0.2554657564517145,
+        "brier": 0.14196
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.9,
+        "lenient": 1,
+        "logLoss": 0.2554657564517145,
+        "brier": 0.14196
+      },
+      "unclear": {
+        "human": 0.8,
+        "judge": 0.8,
+        "jev": 0.9
+      }
+    },
+    {
+      "q": "workingCapital",
+      "label": "Working capital",
+      "judge": {
+        "n": 10,
+        "exact": 1,
+        "lenient": 1,
+        "kappa": 1,
+        "unanimous": 1
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 1,
+        "lenient": 1,
+        "logLoss": 0.09687889668146686,
+        "brier": 0.03744000000000001
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 1,
+        "lenient": 1,
+        "logLoss": 0.09687889668146686,
+        "brier": 0.03744000000000001
+      },
+      "unclear": {
+        "human": 0.9,
+        "judge": 0.9,
+        "jev": 0.9
+      }
+    },
+    {
+      "q": "guidance",
+      "label": "Guidance revision",
+      "judge": {
+        "n": 10,
+        "exact": 0.9,
+        "lenient": 1,
+        "kappa": 0.8611111111111112,
+        "unanimous": 1
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.8,
+        "lenient": 0.9,
+        "logLoss": 0.4981870413359891,
+        "brier": 0.29346
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.9,
+        "lenient": 1,
+        "logLoss": 0.27846458360236725,
+        "brier": 0.14946
+      },
+      "unclear": {
+        "human": 0,
+        "judge": 0,
+        "jev": 0
+      }
+    },
+    {
+      "q": "visibility",
+      "label": "Outlook visibility",
+      "judge": {
+        "n": 10,
+        "exact": 0.8,
+        "lenient": 1,
+        "kappa": 0.5833333333333334,
+        "unanimous": 0.9
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.3,
+        "lenient": 0.7,
+        "logLoss": 1.8323951795077023,
+        "brier": 0.98536
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.4,
+        "lenient": 0.9,
+        "logLoss": 1.452393904621952,
+        "brier": 0.79136
+      },
+      "unclear": {
+        "human": 0,
+        "judge": 0,
+        "jev": 0
+      }
+    },
+    {
+      "q": "liquidity",
+      "label": "Funding resilience",
+      "judge": {
+        "n": 10,
+        "exact": 0.9,
+        "lenient": 1,
+        "kappa": 0.7872340425531916,
+        "unanimous": 0.8
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.5,
+        "lenient": 0.8,
+        "logLoss": 1.085994848296049,
+        "brier": 0.67274
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.4,
+        "lenient": 0.7,
+        "logLoss": 1.3244771674191507,
+        "brier": 0.81074
+      },
+      "unclear": {
+        "human": 0.2,
+        "judge": 0.1,
+        "jev": 0.6
+      }
+    },
+    {
+      "q": "execution",
+      "label": "Execution risk",
+      "judge": {
+        "n": 10,
+        "exact": 1,
+        "lenient": 1,
+        "kappa": 1,
+        "unanimous": 0.9
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.7,
+        "lenient": 1,
+        "logLoss": 0.6999074990027536,
+        "brier": 0.43172
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.7,
+        "lenient": 1,
+        "logLoss": 0.6999074990027536,
+        "brier": 0.43172
+      },
+      "unclear": {
+        "human": 0,
+        "judge": 0,
+        "jev": 0.1
+      }
+    },
+    {
+      "q": "allocation",
+      "label": "Capital allocation",
+      "judge": {
+        "n": 10,
+        "exact": 1,
+        "lenient": 1,
+        "kappa": 1,
+        "unanimous": 1
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.7,
+        "lenient": 0.8,
+        "logLoss": 0.5684344797925966,
+        "brier": 0.33701999999999993
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.7,
+        "lenient": 1,
+        "logLoss": 0.5684344797925966,
+        "brier": 0.33701999999999993
+      },
+      "unclear": {
+        "human": 0.2,
+        "judge": 0.2,
+        "jev": 0.4
+      }
+    },
+    {
+      "q": "dilution",
+      "label": "Shareholder dilution",
+      "judge": {
+        "n": 10,
+        "exact": 0.7,
+        "lenient": 0.9,
+        "kappa": 0.4444444444444443,
+        "unanimous": 0.9
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.8,
+        "lenient": 1,
+        "logLoss": 1.002501024227125,
+        "brier": 0.44408000000000014
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.9,
+        "lenient": 1,
+        "logLoss": 0.24021017024665534,
+        "brier": 0.13808000000000004
+      },
+      "unclear": {
+        "human": 0.5,
+        "judge": 0.8,
+        "jev": 0.7
+      }
+    },
+    {
+      "q": "specificity",
+      "label": "Disclosure quality",
+      "judge": {
+        "n": 10,
+        "exact": 0.9,
+        "lenient": 1,
+        "kappa": 0,
+        "unanimous": 0.9
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.3,
+        "lenient": 1,
+        "logLoss": 1.0758363627180418,
+        "brier": 0.80522
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 0.2,
+        "lenient": 1,
+        "logLoss": 1.3334242055174146,
+        "brier": 0.97522
+      },
+      "unclear": {
+        "human": 0,
+        "judge": 0,
+        "jev": 0
+      }
+    },
+    {
+      "q": "qa",
+      "label": "Q&A accountability",
+      "judge": {
+        "n": 10,
+        "exact": 0.8,
+        "lenient": 1,
+        "kappa": 0,
+        "unanimous": 1
+      },
+      "jevHuman": {
+        "n": 10,
+        "strict": 0.8,
+        "lenient": 1,
+        "logLoss": 0.3653074400636461,
+        "brier": 0.23256000000000002
+      },
+      "jevJudge": {
+        "n": 10,
+        "strict": 1,
+        "lenient": 1,
+        "logLoss": 0.14421889918606284,
+        "brier": 0.06455999999999999
+      },
+      "unclear": {
+        "human": 0,
+        "judge": 0,
+        "jev": 0
+      }
+    }
+  ],
+  "calibration": [
+    {
+      "bin": "0.0–0.5",
+      "n": 19,
+      "confidence": 0.43210526315789477,
+      "accuracy": 0.5263157894736842
+    },
+    {
+      "bin": "0.5–0.7",
+      "n": 45,
+      "confidence": 0.5961234567901236,
+      "accuracy": 0.5111111111111111
+    },
+    {
+      "bin": "0.7–0.9",
+      "n": 45,
+      "confidence": 0.7977351290684626,
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "bin": "0.9–1.0",
+      "n": 51,
+      "confidence": 0.965478312537136,
+      "accuracy": 0.8823529411764706
+    }
+  ],
+  "ece": 0.09845643939393947,
+  "grounding": {
+    "human": {
+      "quotes": 427,
+      "found": 426,
+      "ungrounded": 0,
+      "labels": 160,
+      "verified": 0.9976580796252927,
+      "ungroundedRate": 0
+    },
+    "judge": {
+      "quotes": 1462,
+      "found": 1441,
+      "ungrounded": 0,
+      "labels": 480,
+      "verified": 0.9856361149110807,
+      "ungroundedRate": 0
+    }
+  },
+  "perturbations": {
+    "noise": {
+      "n": 160,
+      "changed": 0.025,
+      "towardFavorable": 0,
+      "awayFavorable": 3,
+      "favorableShift": -0.0004987373737373739,
+      "unclearBase": 0.3,
+      "unclearOther": 0.3125
+    },
+    "injection": {
+      "n": 160,
+      "changed": 0.05625,
+      "towardFavorable": 1,
+      "awayFavorable": 7,
+      "favorableShift": -0.01249558080808081,
+      "unclearBase": 0.3,
+      "unclearOther": 0.3125
+    },
+    "fluff": {
+      "n": 160,
+      "changed": 0.025,
+      "towardFavorable": 0,
+      "awayFavorable": 4,
+      "favorableShift": -0.01067739898989899,
+      "unclearBase": 0.3,
+      "unclearOther": 0.3
+    },
+    "truncated": {
+      "n": 160,
+      "changed": 0.41875,
+      "towardFavorable": 5,
+      "awayFavorable": 35,
+      "favorableShift": -0.13712563131313132,
+      "unclearBase": 0.3,
+      "unclearOther": 0.56875
+    },
+    "noQa": {
+      "n": 10,
+      "pass": 1,
+      "rows": [
+        {
+          "ticker": "FIX",
+          "base": "direct",
+          "perturbed": "no_qa"
+        },
+        {
+          "ticker": "MYFW",
+          "base": "direct",
+          "perturbed": "no_qa"
+        },
+        {
+          "ticker": "GBCI",
+          "base": "direct",
+          "perturbed": "no_qa"
+        },
+        {
+          "ticker": "KRC",
+          "base": "direct",
+          "perturbed": "no_qa"
+        },
+        {
+          "ticker": "REXR",
+          "base": "direct",
+          "perturbed": "no_qa"
+        },
+        {
+          "ticker": "USCB",
+          "base": "direct",
+          "perturbed": "no_qa"
+        },
+        {
+          "ticker": "VTMX",
+          "base": "direct",
+          "perturbed": "no_qa"
+        },
+        {
+          "ticker": "WSFS",
+          "base": "direct",
+          "perturbed": "no_qa"
+        },
+        {
+          "ticker": "FHB",
+          "base": "direct",
+          "perturbed": "no_qa"
+        },
+        {
+          "ticker": "PFBC",
+          "base": "direct",
+          "perturbed": "no_qa"
+        }
+      ]
+    }
+  },
+  "cost": {
+    "human": 1.9678200000000003,
+    "judge": 1.8493084,
+    "jev": 0.026800410000000004,
+    "jevRuns": 60
+  }
+}
